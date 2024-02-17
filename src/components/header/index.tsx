@@ -9,8 +9,8 @@ export function Header() {
     return (
         <header id="header">
             <div className='flex gap-10'>
-                <img src={ logo } alt="" />
-
+                <img className='logo' src={ logo } alt="" />
+                
                 <div className='navigation'>
                     <img src={ menu } alt="" />
                     
@@ -23,8 +23,17 @@ export function Header() {
             </div>
 
             <div className='user'>
-                <img className='p-3' src={ cart } alt="" />
-                <img src={ avatar } alt="" />
+                <div className='relative'>
+                    <input className='peer hidden' type="checkbox" id='cart' />
+                    <label htmlFor="cart"><img className='p-3 cursor-pointer' src={ cart } alt="" /></label>
+                    
+                    <div className='cart'>
+                        <h1>Cart</h1>
+                        <span>Your cart is empty.</span>
+                    </div>
+                </div>
+
+                <img className='cursor-pointer border-2 border-transparent hover:border-[--orange] rounded-full transition-all' src={ avatar } alt="" />
             </div>
         </header>
     )

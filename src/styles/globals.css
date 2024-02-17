@@ -53,3 +53,7 @@
 
   font-family: "Kumbh Sans", sans-serif;
 }
+
+button, .images-thumbnail img, .images-thumbnail img {
+  @apply cursor-pointer hover:opacity-70 transition-all
+}

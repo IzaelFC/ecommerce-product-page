@@ -1,0 +1,51 @@
+#buy-area {
+    @apply flex flex-col gap-5 my-auto w-[80vh]
+}
+
+#buy-area > h2 {
+    @apply text-sm text-[--orange] font-bold uppercase
+}
+
+#buy-area > h1 {
+    @apply text-5xl font-bold
+}
+
+#buy-area p {
+    @apply text-[--dark-grayish-blue]
+}
+
+.value {
+    @apply flex gap-5
+}
+
+.value span{
+    @apply text-2xl font-bold
+}
+
+.value h2{
+    @apply w-fit text-[--orange] font-bold bg-[--pale-orange] px-2 py-1 rounded-lg
+}
+
+.price > span{
+    @apply text-[--grayish-blue] line-through
+}
+
+.add-to-cart {
+    @apply flex gap-5
+}
+
+.add-to-cart > .amount {
+    @apply flex gap-10 font-bold border border-[--pale-orange] rounded-lg py-3 px-4
+}
+
+.amount > span {
+    @apply my-auto
+}
+
+.add-to-cart > button {
+    @apply flex gap-4 bg-[--orange] text-[--light-grayish-blue] font-bold px-20 py-4 my-auto shadow-[0px_20px_40px_-20px] shadow-[--orange] rounded-lg
+}
+
+.add-to-cart > button * {
+    @apply my-auto
+}

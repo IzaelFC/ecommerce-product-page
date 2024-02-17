@@ -1,0 +1,27 @@
+#images {
+    @apply flex flex-col my-auto w-[30vw]
+}
+
+#images img {
+    @apply rounded-3xl
+}
+
+.images-thumbnail {
+    @apply flex mt-5 justify-between
+}
+
+.images-thumbnail > div {
+    @apply max-w-[80px] h-auto border-2 border-transparent rounded-[14px]
+}
+
+.images-thumbnail > div > input {
+    @apply hidden
+}
+
+.images-thumbnail > div > label img {
+    @apply rounded-xl !important
+}
+
+.border_image {
+    @apply border-2 border-[--orange] transition-all !important
+}

@@ -1,0 +1,33 @@
+header * {
+    @apply my-auto
+}
+
+#header {
+    @apply flex gap-5 py-5 mx-20 justify-between border-b border-[--pale-orange]
+}
+
+.navigation > img {
+    @apply hidden
+}
+
+#header .navigation {
+    @apply flex gap-5 w-[70vh] justify-between
+}
+
+#header .navigation a {
+    @apply text-[--dark-grayish-blue] hover:text-[--very-dark-blue] transition-all
+}
+
+#header .user {
+    @apply flex gap-2
+}
+
+#header .user img {
+    @apply w-10 h-10
+}
+
+@media screen and (max-width:840px) {
+    .navigation > img {
+        @apply block
+    }
+}

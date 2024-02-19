@@ -5,7 +5,7 @@ import menu from '../../assets/images/icon-menu.svg'
 
 import './index.css'
 
-export function Header() {
+export function Header(props : { price?: number }) {
     return (
         <header id="header">
             <div className='flex gap-10'>
@@ -29,7 +29,7 @@ export function Header() {
                     
                     <div className='cart'>
                         <h1>Cart</h1>
-                        <span>Your cart is empty.</span>
+                        <span>{ props.price == 0 ? 'Your cart is empty.' : props.price }</span>
                     </div>
                 </div>
 

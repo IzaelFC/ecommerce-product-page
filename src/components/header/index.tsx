@@ -44,7 +44,7 @@ export function Header(props : { price?: number, quantity?: number}) {
                                             <span>$125.00 x { props.quantity } <span className='font-bold'>${ props.price }</span></span>
                                         </div>
 
-                                        <img className='w-3' src={ icon_delete } alt="" />
+                                        <img className='w-3 cursor-pointer' src={ icon_delete } alt="" />
                                     </div>
                                     <button className='bg-[--orange] text-white p-2 rounded'>Checkout</button>
                                   </div>

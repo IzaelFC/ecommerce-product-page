@@ -26,8 +26,8 @@ header * {
     @apply flex gap-2
 }
 
-#header .user img {
-    @apply w-10 h-10 -mt-4
+#header .user .cart-and-avatar {
+    @apply w-10 h-10 -mt-4 cursor-pointer
 }
 
 .cart {

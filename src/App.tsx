@@ -26,7 +26,7 @@ export function App() {
   
   return (
     <div>
-      <Header price={ price } />
+      <Header quantity={ quantity } price={ price } />
 
       <div className="flex gap-10 h-[87vh] justify-around mx-10">
         <Images />

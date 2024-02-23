@@ -1,32 +1,95 @@
 import { useState } from "react";
 
-import { Header } from "./components/header";
 import { Images } from "./components/images";
 
 import minus from './assets/images/icon-minus.svg'
 import plus from './assets/images/icon-plus.svg'
+import logo from './assets/images/logo.svg'
+import avatar from './assets/images/image-avatar.png'
+import cart from './assets/images/icon-cart.svg'
+import menu from './assets/images/icon-menu.svg'
+import product_1_thumbnail from './assets/images/image-product-1-thumbnail.jpg'
+import icon_delete from './assets/images/icon-delete.svg'
 
+import './styles/header.css'
 import './styles/buy-area.css'
-
 
 export function App() {
   const [quantity, setQuantity] = useState(0)
-    const [price, setPrice] = useState(0)
+  const [price, setPrice] = useState(0)
+  const [finalValue, setFinalValue] = useState(0)
+  
+  function switchQuantity(value : number) {
+      if ((quantity + value) >= 0) {
+        setQuantity(quantity + value)
+      }
+  }
 
-    function switchQuantity(value : number) {
-        if ((quantity + value) >= 0) {
-            setQuantity(quantity + value)
-        }
-    }
+  function priceToPay() {
+    setPrice(125 * quantity)
+    setFinalValue(quantity)
+  }
 
-    function priceToPay() {
-        setPrice(125 * quantity)
-        console.log(price)
-    }
+  function cartDelete() {
+    setPrice(0)
+    setFinalValue(0)
+  }
   
   return (
     <div>
-      <Header quantity={ quantity } price={ price } />
+      <header id="header">
+            <div className='flex gap-10'>
+                <img className='logo' src={ logo } alt="" />
+                
+                <div className='navigation'>
+                    <img src={ menu } alt="" />
+                    
+                    <a href="">Collections</a>
+                    <a href="">Men</a>
+                    <a href="">Women</a>
+                    <a href="">About</a>
+                    <a href="">Contact</a>
+                </div>
+            </div>
+
+            <div className='user'>
+                <div className='relative'>
+                    <input className='peer hidden' type="checkbox" id='cart' />
+                    <label htmlFor="cart">
+                        <img className='cart-and-avatar p-3' src={ cart } alt="" />
+                        <span>{ finalValue == 0 ? '' :
+                            <p className='absolute top-0 right-0 -mt-3 bg-[--orange] text-white text-[8px] px-2 rounded-full'>{ finalValue }</p>
+                            }
+                        </span>
+                    </label>
+                    
+                    <div className='cart'>
+                        <h1>Cart</h1>
+                        <span>
+                            { 
+                                finalValue == 0
+                                ? 'Your cart is empty.' 
+                                : <div className='flex flex-col gap-5'>
+                                    <div className='flex gap-4 h-full'>
+                                        <img className='w-10 rounded' src={ product_1_thumbnail } alt="" />
+                                        
+                                        <div className='my-auto text-sm font-normal'>
+                                            <h2>Fall Limited Edition Sneakers</h2>
+                                            <span>$125.00 x { finalValue } <span className='font-bold'>${ price }</span></span>
+                                        </div>
+
+                                        <img onClick={ cartDelete } className='w-3 cursor-pointer' src={ icon_delete } alt="" />
+                                    </div>
+                                    <button className='bg-[--orange] text-white p-2 rounded'>Checkout</button>
+                                  </div>
+                            }
+                        </span>
+                    </div>
+                </div>
+
+                <img className='cart-and-avatar border-2 border-transparent hover:border-[--orange] rounded-full transition-all' src={ avatar } alt="" />
+            </div>
+        </header>
 
       <div className="flex gap-10 h-[87vh] justify-around mx-10">
         <Images />

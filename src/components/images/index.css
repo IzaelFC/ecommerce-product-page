@@ -25,3 +25,15 @@
 .border_image {
     @apply border-2 border-[--orange] transition-all !important
 }
+
+.border_image_modal {
+    @apply ring-2 ring-[--orange] transition-all !important
+}
+
+.images-thumbnail-modal > div {
+    @apply bg-white border-0 !important
+}
+
+.button_modal {
+    @apply absolute top-0 bottom-0 h-fit bg-white rounded-full m-auto py-3 px-[15px] hover:opacity-100
+}

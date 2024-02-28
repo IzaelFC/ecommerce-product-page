@@ -66,4 +66,8 @@ header * {
     #header .user .cart-and-avatar {
         @apply w-9 h-9
     }
+    
+    #header .user .cart-and-avatar:first-child {
+        @apply p-2
+    }
 }

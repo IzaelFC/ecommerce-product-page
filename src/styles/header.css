@@ -10,12 +10,20 @@ header * {
     @apply pb-4
 }
 
-.navigation > img {
+.menu {
     @apply hidden
 }
 
 #header .navigation {
     @apply flex gap-5 w-[70vh] justify-between
+}
+
+#header .navigation_mobile {
+    @apply absolute left-0 top-0 w-[30vh] h-screen flex flex-col gap-5 bg-white p-5 z-50
+}
+
+#header .navigation_mobile a {
+    @apply m-0
 }
 
 #header .navigation a {
@@ -31,7 +39,7 @@ header * {
 }
 
 .cart {
-    @apply absolute peer-checked:flex hidden flex-col left-0 -ml-40 w-80 h-52 bg-white shadow-[0px_10px_20px_0.5px] shadow-black/20 rounded
+    @apply absolute peer-checked:flex hidden flex-col left-0 -ml-40 w-80 h-52 bg-white shadow-black/20 rounded
 }
 
 .cart > h1 {
@@ -43,7 +51,19 @@ header * {
 }
 
 @media screen and (max-width:840px) {
-    .navigation > img {
-        @apply block
+    #header {
+        @apply mx-[4%]
+    }
+    
+    #header .navigation {
+        @apply hidden
+    }
+
+    .menu {
+        @apply flex
+    }
+    
+    #header .user .cart-and-avatar {
+        @apply w-9 h-9
     }
 }

@@ -10,6 +10,7 @@ import cart from './assets/images/icon-cart.svg'
 import menu from './assets/images/icon-menu.svg'
 import product_1_thumbnail from './assets/images/image-product-1-thumbnail.jpg'
 import icon_delete from './assets/images/icon-delete.svg'
+import close from './assets/images/icon-close.svg'
 
 import './styles/header.css'
 import './styles/buy-area.css'
@@ -18,6 +19,7 @@ export function App() {
   const [quantity, setQuantity] = useState(0)
   const [price, setPrice] = useState(0)
   const [finalValue, setFinalValue] = useState(0)
+  const [openMenu, setOpenMenu] = useState(false)
   
   function switchQuantity(value : number) {
       if ((quantity + value) >= 0) {
@@ -34,22 +36,27 @@ export function App() {
     setPrice(0)
     setFinalValue(0)
   }
+
+  function isOpen() {
+    setOpenMenu(!openMenu)
+  }
   
   return (
     <div>
       <header id="header">
             <div className='flex gap-10'>
+                <img onClick={ isOpen } className="menu mb-4" src={ menu } alt="" />
                 <img className='logo' src={ logo } alt="" />
-                
-                <div className='navigation'>
-                    <img src={ menu } alt="" />
-                    
+
+                <div className={ openMenu ? 'navigation_mobile bg-white !important' : 'navigation' }>
+                    { openMenu ? <button onClick={ isOpen }><img src={ close } /></button> : '' }
                     <a href="">Collections</a>
                     <a href="">Men</a>
                     <a href="">Women</a>
                     <a href="">About</a>
                     <a href="">Contact</a>
                 </div>
+                <div className={ openMenu ? 'absolute top-0 left-0 w-screen h-screen bg-black/50 z-40' : 'hidden' } ></div>
             </div>
 
             <div className='user'>
@@ -57,9 +64,7 @@ export function App() {
                     <input className='peer hidden' type="checkbox" id='cart' />
                     <label htmlFor="cart">
                         <img className='cart-and-avatar p-3' src={ cart } alt="" />
-                        <span>{ finalValue == 0 ? '' :
-                            <p className='absolute top-0 right-0 -mt-3 bg-[--orange] text-white text-[8px] px-2 rounded-full'>{ finalValue }</p>
-                            }
+                        <span>{ finalValue == 0 ? '' : <p className='absolute top-0 right-0 -mt-3 bg-[--orange] text-white text-[8px] px-2 rounded-full'>{ finalValue }</p> }
                         </span>
                     </label>
                     

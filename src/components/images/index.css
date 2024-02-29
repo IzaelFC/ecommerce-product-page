@@ -1,13 +1,13 @@
 #images {
-    @apply flex flex-col my-auto w-[30vw]
+    @apply flex flex-col my-auto sm:w-[30vw]
 }
 
 #images img {
-    @apply rounded-3xl
+    @apply sm:rounded-3xl mx-auto
 }
 
 .images-thumbnail {
-    @apply flex mt-5 justify-between
+    @apply sm:flex hidden mt-5 justify-between
 }
 
 .images-thumbnail > div {
@@ -35,5 +35,5 @@
 }
 
 .button_modal {
-    @apply absolute top-0 bottom-0 h-fit bg-white rounded-full m-auto py-3 px-[15px] hover:opacity-100
+    @apply absolute sm:hidden top-0 bottom-0 h-fit bg-white rounded-full m-auto py-3 px-[15px] hover:opacity-100
 }

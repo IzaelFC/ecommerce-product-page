@@ -56,11 +56,11 @@ export function App() {
                     <a href="">About</a>
                     <a href="">Contact</a>
                 </div>
-                <div className={ openMenu ? 'absolute top-0 left-0 w-screen h-screen bg-black/50 z-40' : 'hidden' } ></div>
+                <div className={ openMenu ? 'absolute top-0 left-0 w-full h-screen bg-black/50 z-40' : 'hidden' } ></div>
             </div>
 
             <div className='user'>
-                <div className='relative'>
+                <div className='sm:relative'>
                     <input className='peer hidden' type="checkbox" id='cart' />
                     <label htmlFor="cart">
                         <img className='cart-and-avatar p-3' src={ cart } alt="" />
@@ -96,7 +96,7 @@ export function App() {
             </div>
         </header>
 
-      <div className="flex gap-10 h-[87vh] justify-around mx-10">
+      <div className="flex sm:flex-row flex-col gap-10 sm:h-[87vh] justify-around sm:mx-10">
         <Images />
 
         <section id='buy-area'>

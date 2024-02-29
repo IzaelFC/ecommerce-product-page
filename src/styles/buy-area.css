@@ -1,5 +1,5 @@
 #buy-area {
-    @apply flex flex-col gap-5 my-auto w-[80vh]
+    @apply flex flex-col gap-5 my-auto sm:w-[80vh] sm:mx-10 mx-5 mb-10
 }
 
 #buy-area > h2 {
@@ -7,11 +7,11 @@
 }
 
 #buy-area > h1 {
-    @apply text-5xl font-bold
+    @apply sm:text-5xl text-3xl font-bold
 }
 
 #buy-area p {
-    @apply text-[--dark-grayish-blue]
+    @apply sm:text-base text-sm text-[--dark-grayish-blue]
 }
 
 .value {
@@ -26,16 +26,20 @@
     @apply w-fit text-[--orange] font-bold bg-[--pale-orange] px-2 py-1 rounded-lg
 }
 
+.price {
+    @apply flex sm:flex-col flex-row justify-between
+}
+
 .price > span{
-    @apply text-[--grayish-blue] line-through
+    @apply text-[--grayish-blue] line-through my-auto
 }
 
 .add-to-cart {
-    @apply flex gap-5
+    @apply flex flex-col sm:flex-row gap-5
 }
 
 .add-to-cart > .amount {
-    @apply flex gap-10 font-bold border border-[--pale-orange] rounded-lg py-3 px-4
+    @apply flex gap-10 w-full font-bold justify-between border border-[--pale-orange] rounded-lg py-3 px-4
 }
 
 .amount > span {
@@ -43,7 +47,7 @@
 }
 
 .add-to-cart > button {
-    @apply flex gap-4 bg-[--orange] text-[--light-grayish-blue] font-bold px-20 py-4 my-auto shadow-[0px_20px_40px_-20px] shadow-[--orange] rounded-lg
+    @apply flex gap-2 w-full bg-[--orange] justify-center text-[--light-grayish-blue] font-bold px-[13%] py-4 my-auto shadow-[0px_20px_40px_-20px] shadow-[--orange] rounded-lg
 }
 
 .add-to-cart > button * {

@@ -47,7 +47,14 @@ export function Images() {
     return (
         <section id="images">
             <Dialog>
-                <DialogTrigger asChild><img src={ image } alt="" /></DialogTrigger>
+                <div className="relative">
+                    <button className="group/previous button_modal ml-1 py-2 px-[11px]" onClick={() => navigateImages('previous')} ><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path className="group-hover/previous:stroke-[--orange] transition-all" d="M11 1 3 9l8 8" stroke="black" strokeWidth="3" fill="none" /></svg></button>
+                    <DialogTrigger asChild>
+                        <img src={ image } alt="" />
+                    </DialogTrigger>
+                    <button className="group/next button_modal mr-2 py-2 px-[11px] right-0" onClick={() => navigateImages('next')} ><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path className="group-hover/next:stroke-[--orange] transition-all" d="m2 1 8 8-8 8" stroke="black" strokeWidth="3" fill="none" /></svg></button>
+                </div>
+                
                 <DialogContent className="bg-transparent border-none">
                     <div className="relative flex text-white">
                         <button className="group/previous button_modal ml-1" onClick={() => navigateImages('previous')} ><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path className="group-hover/previous:stroke-[--orange] transition-all" d="M11 1 3 9l8 8" stroke="black" strokeWidth="3" fill="none" /></svg></button>

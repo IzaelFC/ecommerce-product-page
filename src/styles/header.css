@@ -38,7 +38,6 @@ header * {
     @apply w-10 h-10 -mt-4 cursor-pointer
 }
 
-/* Tirar relative da div pai */
 .cart {
     @apply absolute peer-checked:flex hidden flex-col left-0 right-0 sm:-ml-40 sm:w-80 w-[90%] mt-10 mx-auto h-52 bg-white shadow-2xl shadow-black/20 sm:rounded rounded-xl z-10
 }

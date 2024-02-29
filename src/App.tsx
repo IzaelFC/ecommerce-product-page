@@ -64,7 +64,7 @@ export function App() {
                     <input className='peer hidden' type="checkbox" id='cart' />
                     <label htmlFor="cart">
                         <img className='cart-and-avatar p-3' src={ cart } alt="" />
-                        <span>{ finalValue == 0 ? '' : <p className='absolute top-0 right-0 -mt-3 bg-[--orange] text-white text-[8px] px-2 rounded-full'>{ finalValue }</p> }
+                        <span>{ finalValue == 0 ? '' : <p className='absolute top-0 right-0 w-fit sm:-mt-3 mt-4 sm:mr-0 mr-[60px] bg-[--orange] text-white text-[8px] px-2 rounded-full'>{ finalValue }</p> }
                         </span>
                     </label>
                     
